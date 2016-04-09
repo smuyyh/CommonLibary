@@ -1,11 +1,17 @@
 package com.yuyh.library.io;
 
+import android.content.Context;
+import android.content.res.AssetManager;
+
+import com.yuyh.library.AppUtils;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 
@@ -16,6 +22,96 @@ import java.text.DecimalFormat;
 public class FileUtils {
 
     private static final String TAG = FileUtils.class.getSimpleName();
+
+    /**
+     * 创建根缓存目录
+     *
+     * @return
+     */
+    public static String createRootPath() {
+        String cacheRootPath = "";
+        if (StorageUtils.isSdCardAvailable()) {
+            // /sdcard/Android/data/<application package>/cache
+            cacheRootPath = AppUtils.getAppContext().getExternalCacheDir().getPath();
+        } else {
+            // /data/data/<application package>/cache
+            cacheRootPath = AppUtils.getAppContext().getCacheDir().getPath();
+        }
+        return cacheRootPath;
+    }
+
+    /**
+     * 创建文件夹
+     *
+     * @param dirPath
+     * @return 创建失败返回""
+     */
+    private static String createDir(String dirPath) {
+        try {
+            File dir = new File(dirPath);
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+            return dir.getAbsolutePath();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return dirPath;
+    }
+
+    /**
+     * 获取图片缓存目录
+     *
+     * @return 创建失败, 返回""
+     */
+    public static String getImageCachePath() {
+        String path = createDir(createRootPath() + File.separator + "img" + File.separator);
+        return path;
+    }
+
+    /**
+     * 获取图片裁剪缓存目录
+     *
+     * @return 创建失败, 返回""
+     */
+    public static String getImageCropCachePath() {
+        String path = createDir(createRootPath() + File.separator + "imgCrop" + File.separator);
+        return path;
+    }
+
+    /**
+     * 将内容写入文件
+     *
+     * @param filePath eg:/mnt/sdcard/demo.txt
+     * @param content  内容
+     */
+    public static void writeFileSdcard(String filePath, String content, boolean isAppend) {
+        try {
+            FileOutputStream fout = new FileOutputStream(filePath, isAppend);
+            byte[] bytes = content.getBytes();
+            fout.write(bytes);
+            fout.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 打开Asset下的文件
+     *
+     * @param fileName 文件名
+     * @return
+     */
+    public static InputStream openAssetFile(Context context, String fileName) {
+        AssetManager am = context.getAssets();
+        InputStream is = null;
+        try {
+            is = am.open(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return is;
+    }
 
     /**
      * 文件拷贝
@@ -73,7 +169,37 @@ public class FileUtils {
      * @throws IOException
      */
     public static boolean deleteFile(File file) throws IOException {
-        return file != null && file.delete();
+        return deleteFileOrDirectory(file);
+    }
+
+    /**
+     * 删除指定文件，如果是文件夹，则递归删除
+     *
+     * @param file
+     * @return
+     * @throws IOException
+     */
+    public static boolean deleteFileOrDirectory(File file) throws IOException {
+        try {
+            if (file!=null && file.isFile()) {
+                return file.delete();
+            }
+            if (file!=null && file.isDirectory()) {
+                File[] childFiles = file.listFiles();
+                // 删除空文件夹
+                if (childFiles == null || childFiles.length == 0) {
+                    return file.delete();
+                }
+                // 递归删除文件夹下的子文件
+                for (int i = 0; i < childFiles.length; i++) {
+                    deleteFileOrDirectory(childFiles[i]);
+                }
+                return file.delete();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     /***

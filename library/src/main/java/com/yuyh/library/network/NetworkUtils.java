@@ -1,11 +1,23 @@
 package com.yuyh.library.network;
 
+import android.app.Activity;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
+import android.net.Uri;
+import android.os.IBinder;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
+import com.yuyh.library.AppUtils;
 import com.yuyh.library.log.LogUtils;
 
 import java.lang.reflect.Method;
@@ -16,6 +28,19 @@ import java.lang.reflect.Method;
  */
 public class NetworkUtils {
     private static final String TAG = Network.class.getSimpleName();
+
+    /**
+     * 接受网络状态的广播Action
+     */
+    public static final String NET_BROADCAST_ACTION = "com.network.state.action";
+    public static final String NET_STATE_NAME = "network_state";
+    /**
+     * 实时更新网络状态<br>
+     * -1为网络无连接<br>
+     * 1为WIFI<br>
+     * 2为移动网络<br>
+     */
+    public static int CURRENT_NETWORK_STATE = -1;
 
     public enum NetType {
         None(1, "无网络连接"),
@@ -302,5 +327,103 @@ public class NetworkUtils {
                 return NetWorkType.UnKnown;
         }
     }
+
+    /**
+     * 判断GPS是否开启，GPS或者AGPS开启一个就认为是开启的
+     *
+     * @return true 表示开启
+     */
+    public static final boolean isGpsEnabled() {
+        LocationManager locationManager = (LocationManager) AppUtils.getAppContext().getSystemService(Context.LOCATION_SERVICE);
+        boolean gps = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER); // GPS
+        boolean network = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER); // WLAN或移动网络(3G/2G)
+        if (gps || network) {
+            Log.i("demo", "GPS Ensable");
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * 强制帮用户打开GPS
+     */
+    public static final void openGPS() {
+        Intent GPSIntent = new Intent();
+        GPSIntent.setClassName("com.android.settings", "com.android.settings.widget.SettingsAppWidgetProvider");
+        GPSIntent.addCategory("android.intent.category.ALTERNATIVE");
+        GPSIntent.setData(Uri.parse("custom:3"));
+        try {
+            PendingIntent.getBroadcast(AppUtils.getAppContext(), 0, GPSIntent, 0).send();
+        } catch (PendingIntent.CanceledException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 打开网络设置界面
+     */
+    public static void openSetting(Activity activity) {
+        Intent intent = null;
+        //判断手机系统的版本  即API大于10 就是3.0或以上版本
+        if (android.os.Build.VERSION.SDK_INT > 10) {
+            intent = new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS);
+        } else {
+            intent = new Intent();
+            ComponentName component = new ComponentName("com.android.settings", "com.android.settings.WirelessSettings");
+            intent.setComponent(component);
+            intent.setAction("android.intent.action.VIEW");
+        }
+        activity.startActivity(intent);
+    }
+
+    /**
+     * 开启服务,实时监听网络变化（需要在清单文件配置Service）
+     *
+     * @param context
+     */
+    public static void startNetService(final Context context) {
+        //注册广播
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(NET_BROADCAST_ACTION);
+        context.registerReceiver(mReceiver, intentFilter);
+        //开启服务
+        Intent intent = new Intent(context, NetworkService.class);
+        context.bindService(intent, new ServiceConnection() {
+            @Override
+            public void onServiceDisconnected(ComponentName name) {
+            }
+
+            @Override
+            public void onServiceConnected(ComponentName name, IBinder service) {
+            }
+        }, Context.BIND_AUTO_CREATE);
+    }
+
+    /**
+     * 接受服务上发过来的广播
+     */
+    private static BroadcastReceiver mReceiver = new BroadcastReceiver() {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent != null) {
+                CURRENT_NETWORK_STATE = (Integer) intent.getExtras().get(NET_STATE_NAME);
+                switch (CURRENT_NETWORK_STATE) {
+                    case -1:
+                        LogUtils.d("网络更改为 无网络  CURRENT_NETWORK_STATE =" + CURRENT_NETWORK_STATE);
+                        break;
+                    case 1:
+                        LogUtils.d("网络更改为 WIFI网络  CURRENT_NETWORK_STATE=" + CURRENT_NETWORK_STATE);
+                        break;
+                    case 2:
+                        LogUtils.d("网络更改为 移动网络  CURRENT_NETWORK_STATE =" + CURRENT_NETWORK_STATE);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+        }
+    };
 
 }

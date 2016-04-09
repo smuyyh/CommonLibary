@@ -77,7 +77,7 @@ public class PatternUtils {
     /**
      * 从字符串中获取日期
      *
-     * @param url
+     * @param content
      * @return
      */
     public static String getDateFromString(String content) {

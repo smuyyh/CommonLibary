@@ -13,6 +13,8 @@ import android.os.Build;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import com.yuyh.library.AppUtils;
+
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -22,6 +24,62 @@ import java.util.Map;
  * @date 16/4/9.
  */
 public class PackageUtils {
+
+    /**
+     * 检查当前应用是否有某项权限
+     *
+     * @param permName 权限名称
+     * @return
+     */
+    public static boolean checkPermission(String permName) {
+        return checkPermission(permName, AppUtils.getAppContext().getPackageName());
+    }
+
+    /**
+     * 检查包名所在的程序是否有某项权限
+     *
+     * @param permName 权限名称
+     * @param pkgName  程序所在的包名
+     * @return
+     */
+    public static boolean checkPermission(String permName, String pkgName) {
+        PackageManager pm = AppUtils.getAppContext().getPackageManager();
+        try {
+            boolean isHave = (PackageManager.PERMISSION_GRANTED == pm.checkPermission(permName, pkgName));
+            return isHave;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    /**
+     * 获取App包 信息版本号
+     *
+     * @param context
+     * @return
+     */
+    public static PackageInfo getPackageInfo(Context context) {
+        PackageManager packageManager = context.getPackageManager();
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        return packageInfo;
+    }
+
+    public static int getAppVersionCode(Context context) {
+        PackageInfo pi = getPackageInfo(context);
+        return pi == null ? -1 : pi.versionCode;
+    }
+
+    public static String getAppVersionName(Context context) {
+        PackageInfo pi = getPackageInfo(context);
+        return pi == null ? "" : pi.versionName;
+    }
+
 
     /**
      * 调用系统安装应用
@@ -96,33 +154,6 @@ public class PackageUtils {
             }
         }
         return false;
-    }
-
-    /**
-     * 获取App包 信息版本号
-     *
-     * @param context
-     * @return
-     */
-    public static PackageInfo getPackageInfo(Context context) {
-        PackageManager packageManager = context.getPackageManager();
-        PackageInfo packageInfo = null;
-        try {
-            packageInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        return packageInfo;
-    }
-
-    public static int getAppVersionCode(Context context) {
-        PackageInfo pi = getPackageInfo(context);
-        return pi == null ? -1 : pi.versionCode;
-    }
-
-    public static String getAppVersionName(Context context) {
-        PackageInfo pi = getPackageInfo(context);
-        return pi == null ? "" : pi.versionName;
     }
 
     /**

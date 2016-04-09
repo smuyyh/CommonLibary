@@ -28,7 +28,7 @@ public class StorageUtils {
      *
      * @return
      */
-    public boolean isSdCardAvailable() {
+    public static boolean isSdCardAvailable() {
         return Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState());
     }
 
