@@ -21,7 +21,7 @@ import java.io.File;
  * (1) 使用{@link #setOnPhotoResultListener}等回调方法
  * (2) 在调用者所在的Activity或者Fragment的onActivityResult方法中获取操作结果。
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class PhotoUtils {

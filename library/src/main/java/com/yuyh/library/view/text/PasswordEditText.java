@@ -1,4 +1,4 @@
-package com.yuyh.library.view.input;
+package com.yuyh.library.view.text;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -18,7 +18,7 @@ import com.yuyh.library.utils.WidgetUtils;
 /**
  * 密码输入框(默认六位 [*] [*] [*] [*] [*] [*])
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class PasswordEditText extends EditText {

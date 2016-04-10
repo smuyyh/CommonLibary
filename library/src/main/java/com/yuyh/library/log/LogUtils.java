@@ -17,7 +17,7 @@ import java.util.Date;
 /**
  * Log工具类，可控制Log输出开关、保存Log到文件、过滤输出等级
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class LogUtils {

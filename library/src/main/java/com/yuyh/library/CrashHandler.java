@@ -12,7 +12,7 @@ import java.lang.Thread.UncaughtExceptionHandler;
 /**
  * 全局异常捕获
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class CrashHandler implements UncaughtExceptionHandler {

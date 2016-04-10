@@ -1,4 +1,4 @@
-package com.yuyh.library.view.input;
+package com.yuyh.library.view.text;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -14,27 +14,27 @@ import com.yuyh.library.R;
 /**
  * 带有删除图标的EditText
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
-public class EditTextWithDel extends EditText {
+public class ClearEditText extends EditText {
     private Drawable imgInable;
     private Drawable imgAble;
     private Context mContext;
 
-    public EditTextWithDel(Context context) {
+    public ClearEditText(Context context) {
         super(context);
         mContext = context;
         init();
     }
 
-    public EditTextWithDel(Context context, AttributeSet attrs, int defStyle) {
+    public ClearEditText(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mContext = context;
         init();
     }
 
-    public EditTextWithDel(Context context, AttributeSet attrs) {
+    public ClearEditText(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
         init();

@@ -11,7 +11,7 @@ import android.widget.ScrollView;
 /**
  * 弹性ScrollView 类似iOS实现上下拉超出后，手指离开后弹回效果
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class ReboundScrollView extends ScrollView {

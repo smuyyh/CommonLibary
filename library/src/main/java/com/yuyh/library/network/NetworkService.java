@@ -12,7 +12,7 @@ import android.os.IBinder;
 /**
  * 网络状态监听服务
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class NetworkService extends Service {

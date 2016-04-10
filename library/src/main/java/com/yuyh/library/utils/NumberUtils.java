@@ -3,7 +3,7 @@ package com.yuyh.library.utils;
 /**
  * 数字类型转换工具类
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class NumberUtils {

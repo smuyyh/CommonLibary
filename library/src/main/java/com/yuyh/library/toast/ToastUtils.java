@@ -8,7 +8,7 @@ import com.yuyh.library.AppUtils;
 /**
  * Toast工具类，解决多个Toast同时出现的问题
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class ToastUtils {

@@ -8,7 +8,7 @@ import android.text.Html;
 import android.view.View;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class DialogUtils {

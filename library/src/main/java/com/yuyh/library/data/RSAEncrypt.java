@@ -24,7 +24,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class RSAEncrypt {

@@ -9,7 +9,7 @@ import android.os.Build;
 /**
  * 剪贴板工具类
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class ClipboardUtils {

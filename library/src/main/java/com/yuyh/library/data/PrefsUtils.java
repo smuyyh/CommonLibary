@@ -7,16 +7,16 @@ import com.yuyh.library.data.cipher.Base64Cipher;
 import com.yuyh.library.data.cipher.Cipher;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
-public class SharePreUtils {
+public class PrefsUtils {
 
     private SharedPreferences sp;
     public static final String KEY_PK_HOME = "msg_pk_home";
     public static final String KEY_PK_NEW = "msg_pk_new";
 
-    public SharePreUtils(Context context, String fileName) {
+    public PrefsUtils(Context context, String fileName) {
         sp = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);
     }
 

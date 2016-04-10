@@ -15,7 +15,7 @@ import java.util.concurrent.FutureTask;
 /**
  * 异步执行
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class AsyncExecutor {

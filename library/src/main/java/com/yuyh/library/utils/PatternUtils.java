@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * 格式验证
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class PatternUtils {

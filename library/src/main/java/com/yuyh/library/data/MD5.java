@@ -8,7 +8,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * MD5加密
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class MD5 {

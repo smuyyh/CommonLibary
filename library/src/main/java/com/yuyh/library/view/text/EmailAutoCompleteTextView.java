@@ -1,4 +1,4 @@
-package com.yuyh.library.view.input;
+package com.yuyh.library.view.text;
 
 import android.content.Context;
 import android.util.AttributeSet;

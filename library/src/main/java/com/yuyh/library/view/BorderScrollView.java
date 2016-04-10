@@ -8,7 +8,7 @@ import android.widget.ScrollView;
 /**
  * 到达顶部或底部触发事件的ScrollView
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class BorderScrollView extends ScrollView {

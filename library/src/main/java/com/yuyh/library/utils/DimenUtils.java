@@ -6,7 +6,7 @@ import android.util.DisplayMetrics;
 import com.yuyh.library.AppUtils;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class DimenUtils {

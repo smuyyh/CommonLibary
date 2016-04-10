@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * 日期工具类
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class DateUtils {

@@ -5,7 +5,7 @@ import android.os.Build;
 import android.os.Handler;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class FlashLightUtils {

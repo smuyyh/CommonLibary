@@ -3,7 +3,7 @@ package com.yuyh.library.data;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class Base64 {

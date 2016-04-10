@@ -9,7 +9,7 @@ import android.widget.Gallery;
 /**
  * 每次只滑动一页的Gallery
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class SlideOnePageGallery extends Gallery {

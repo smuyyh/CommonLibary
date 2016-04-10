@@ -5,7 +5,7 @@ import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class WidgetUtils {

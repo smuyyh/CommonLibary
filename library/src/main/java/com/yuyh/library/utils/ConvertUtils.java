@@ -1,7 +1,7 @@
 package com.yuyh.library.utils;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class ConvertUtils {

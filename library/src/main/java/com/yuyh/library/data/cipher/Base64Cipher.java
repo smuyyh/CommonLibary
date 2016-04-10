@@ -3,7 +3,7 @@ package com.yuyh.library.data.cipher;
 import com.yuyh.library.data.Base64;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class Base64Cipher extends Cipher {

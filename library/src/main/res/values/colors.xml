@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 刷新 -->
+    <color name="pulltorefresh_head_text_color">#ff434343</color>
+
+</resources>

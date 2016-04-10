@@ -10,11 +10,11 @@ import android.view.inputmethod.InputMethodManager;
 /**
  * 软键盘工具类
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 @TargetApi(Build.VERSION_CODES.CUPCAKE)
-public class InputMethodUtils {
+public class IMEUtils {
 
     /**
      * 切换键盘显示/隐藏状态

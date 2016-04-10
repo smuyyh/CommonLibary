@@ -14,7 +14,7 @@ import android.util.DisplayMetrics;
 import com.yuyh.library.log.LogUtils;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class DeviceUtils {

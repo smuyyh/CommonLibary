@@ -12,7 +12,7 @@ import java.io.ObjectOutputStream;
 /**
  * 序列化工具类
  *
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/10.
  */
 public class SerializeUtils {

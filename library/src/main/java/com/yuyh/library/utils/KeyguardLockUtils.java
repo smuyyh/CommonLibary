@@ -6,7 +6,7 @@ import android.content.Context;
 import android.os.Build;
 
 /**
- * @author yuyuhang.
+ * @author yuyh.
  * @date 16/4/9.
  */
 public class KeyguardLockUtils {
