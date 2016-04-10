@@ -1,5 +1,7 @@
 package com.yuyh.library.io;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,14 +17,18 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.util.DisplayMetrics;
+import android.view.View;
 
 import com.yuyh.library.data.Base64;
 import com.yuyh.library.log.LogUtils;
+import com.yuyh.library.utils.StringUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 /**
  * @author yuyuhang.
@@ -65,6 +71,18 @@ public class BitmapUtils {
     }
 
     /**
+     * string2Bitmap
+     *
+     * @param str
+     * @return
+     */
+    public static Bitmap stringToBitmap(String str) throws Exception {
+        if (StringUtils.isEmpty(str)) return null;
+        byte[] bitmapArray = Base64.decode(str, Base64.DEFAULT);
+        return BitmapFactory.decodeByteArray(bitmapArray, 0, bitmapArray.length);
+    }
+
+    /**
      * Drawable 转 Bitmap
      *
      * @param drawable
@@ -82,6 +100,40 @@ public class BitmapUtils {
      */
     public static Drawable bitmapToDrawable(Bitmap bitmap) {
         return bitmap == null ? null : new BitmapDrawable(bitmap);
+    }
+
+    /**
+     * 获取View的截图
+     *
+     * @param view
+     * @return
+     */
+    public static Bitmap viewToBitmap(View view) {
+        if (view == null) return null;
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(returnedBitmap);
+        Drawable bgDrawable = view.getBackground();
+        if (bgDrawable != null)
+            bgDrawable.draw(canvas);
+        else
+            canvas.drawColor(Color.WHITE);
+        view.draw(canvas);
+        return returnedBitmap;
+    }
+
+    /**
+     * 屏幕截图
+     *
+     * @param activity
+     * @return
+     */
+    public static Bitmap viewToBitmap(Activity activity) {
+        DisplayMetrics dm = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        View view = activity.getWindow().getDecorView();
+        view.layout(0, 0, dm.widthPixels, dm.heightPixels);
+        view.setDrawingCacheEnabled(true);
+        return Bitmap.createBitmap(view.getDrawingCache());
     }
 
     /**
@@ -139,13 +191,14 @@ public class BitmapUtils {
 
     /**
      * 生成缩略图
+     *
      * @param bitMap
-     * @param needRecycle  原图是否销毁
+     * @param needRecycle 原图是否销毁
      * @param newHeight
      * @param newWidth
      * @return
      */
-    public static Bitmap createBitmapThumbnail(Bitmap bitMap, boolean needRecycle, int newHeight, int newWidth) {
+    public static Bitmap getBitmapThumbnail(Bitmap bitMap, boolean needRecycle, int newHeight, int newWidth) {
         int width = bitMap.getWidth();
         int height = bitMap.getHeight();
         // 计算缩放比例
@@ -193,6 +246,7 @@ public class BitmapUtils {
 
     /**
      * 保存Bitmap到文件
+     *
      * @param bitmap
      * @param absPath 文件绝对路径
      * @return
@@ -200,6 +254,39 @@ public class BitmapUtils {
     public static boolean saveBitmap(Bitmap bitmap, String absPath) {
         return saveBitmap(bitmap, new File(absPath));
     }
+
+    /**
+     * 反射 得到本地视频的预览图
+     *
+     * @param context
+     * @param uri
+     * @return
+     */
+    public static Bitmap createVideoThumbnail(Context context, Uri uri) {
+        Bitmap bitmap = null;
+        String className = "android.media.MediaMetadataRetriever";
+        Object objectMediaMetadataRetriever = null;
+        Method release = null;
+        try {
+            objectMediaMetadataRetriever = Class.forName(className).newInstance();
+            Method setDataSourceMethod = Class.forName(className).getMethod("setDataSource", Context.class, Uri.class);
+            setDataSourceMethod.invoke(objectMediaMetadataRetriever, context, uri);
+            Method getFrameAtTimeMethod = Class.forName(className).getMethod("getFrameAtTime");
+            bitmap = (Bitmap) getFrameAtTimeMethod.invoke(objectMediaMetadataRetriever);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (release != null) {
+                    release.invoke(objectMediaMetadataRetriever);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return bitmap;
+    }
+
 
     public static Intent buildImageGetIntent(Uri saveTo, int outputX, int outputY, boolean returnData) {
         return buildImageGetIntent(saveTo, 1, 1, outputX, outputY, returnData);

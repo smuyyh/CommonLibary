@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.yuyh.library.data;
 
 import java.security.Key;
@@ -13,10 +10,11 @@ import javax.crypto.spec.IvParameterSpec;
 
 /**
  * DES加解密
+ *
  * @author yuyuhang.
  * @date 16/4/9.
  */
-public class DESUtils {
+public class DESEncrypt {
     public static final String ALGORITHM_DES = "DES/CBC/PKCS5Padding";
 
     public static String encode(String key, String data) {

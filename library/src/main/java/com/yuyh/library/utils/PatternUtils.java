@@ -75,6 +75,40 @@ public class PatternUtils {
     }
 
     /**
+     * 格式化手机号码 134*******7790
+     *
+     * @param phoneNo
+     * @return
+     */
+    public static String formatPhoneStart3End4(String phoneNo) {
+        if (null == phoneNo) return "";
+
+        int length = phoneNo.length();
+        StringBuilder builder = new StringBuilder();
+        builder.append(phoneNo.substring(0, 3));
+        for (int i = 0; i < (length - 7); i++) {
+            builder.append("*");
+        }
+        builder.append(phoneNo.substring(length - 4, length));
+        return builder.toString();
+    }
+
+
+    /**
+     * 手机号格式化,去" ","-",",";
+     *
+     * @param phoneNumber
+     * @return
+     */
+    public static String formatPhoneNumber(String phoneNumber) {
+        if (phoneNumber == null) return "";
+        String newString = phoneNumber.replaceAll(" ", "")
+                .replaceAll("-", "")
+                .replaceAll(",", "");
+        return newString;
+    }
+
+    /**
      * 从字符串中获取日期
      *
      * @param content

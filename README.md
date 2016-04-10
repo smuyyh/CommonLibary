@@ -3,7 +3,7 @@ CommonLibary主要是自己成立的一些项目开发中常用的工具类、�
 
 data包
 --
-AESUtils、Base64、ByteUtil、DESUtils、HexUtil、MD5Utils、SharePreUtils。用于数据的安全性及数据持久化
+AESUtils、Base64、ByteUtil、DESUtils、HexUtil、MD5Utils、RSAEncrypt、SharePreUtils。用于数据的安全性及数据持久化
 
 io包
 --
@@ -22,4 +22,13 @@ toast包
 DialogUtils、NotificationUtils、ToastUtils。Toast工具类，解决连续弹出问题，发送通知栏信息、弹出对话框等。
 
 utils包
-各类常用工具类，包括AlarmUtils，AsyncExecutor，CheckUtils，ClipboardUtils，DateUtils，DeviceUtils，FieldUtils，FlashLightUtils，InputMethodUtils，KeyguardLockUtils，NumberUtils，PackageUtils，PatternUtils，ShellUtils，StringUtils，VibrateUtils，WakeLockUtils，WidgetUtils
+--
+各类常用工具类，包括AlarmUtils，AsyncExecutor，CheckUtils，ClipboardUtils，DateUtils，DeviceUtils，FieldUtils，FlashLightUtils，InputMethodUtils，KeyguardLockUtils，NumberUtils，PackageUtils，PatternUtils，ShellUtils，StringUtils，VibrateUtils，WakeLockUtils，ConvertUtils、DimenUtils、JSONUtils、SerializeUtils
+
+view包
+--
+各类自定义控件。例如密码输入框、下拉回弹ListView、带删除键的EditText、自动匹配邮箱输入框...
+
+AppUtils:用于获取全局Context、执行UI线程...
+
+CrashHandler:全局异常捕获

@@ -53,10 +53,10 @@ public class SharePreUtils {
             String hex = get(key, (String) null);
             if (hex == null)
                 return null;
-            byte[] bytes = HexUtil.decodeHex(hex.toCharArray());
+            byte[] bytes = HexUtils.decodeHex(hex.toCharArray());
             if (cipher != null)
                 bytes = cipher.decrypt(bytes);
-            Object obj = ByteUtil.byteToObject(bytes);
+            Object obj = ByteUtils.byteToObject(bytes);
             return obj;
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,10 +77,10 @@ public class SharePreUtils {
             if (obj == null) {
                 sp.edit().remove(key).commit();
             } else {
-                byte[] bytes = ByteUtil.objectToByte(obj);
+                byte[] bytes = ByteUtils.objectToByte(obj);
                 if (cipher != null)
                     bytes = cipher.encrypt(bytes);
-                put(key, HexUtil.encodeHexStr(bytes));
+                put(key, HexUtils.encodeHexStr(bytes));
             }
         } catch (Exception e) {
             e.printStackTrace();

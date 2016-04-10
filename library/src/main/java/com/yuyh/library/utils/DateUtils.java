@@ -12,6 +12,18 @@ import java.util.Date;
  */
 public class DateUtils {
 
+    public static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+
+    /**
+     * 格式化时间
+     *
+     * @param time
+     * @return
+     */
+    public static String getTime(long time) {
+        return format(time, DEFAULT_DATE_FORMAT);
+    }
+
     /**
      * 格式化时间,自定义标签
      *

@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 
@@ -99,7 +100,8 @@ public class FileUtils {
     /**
      * 打开Asset下的文件
      *
-     * @param fileName 文件名
+     * @param context
+     * @param fileName
      * @return
      */
     public static InputStream openAssetFile(Context context, String fileName) {
@@ -111,6 +113,33 @@ public class FileUtils {
             e.printStackTrace();
         }
         return is;
+    }
+
+    /**
+     * 获取Raw下的文件内容
+     *
+     * @param context
+     * @param resId
+     * @return            文件内容
+     */
+    public static String getFileFromRaw(Context context, int resId) {
+        if (context == null) {
+            return null;
+        }
+
+        StringBuilder s = new StringBuilder();
+        try {
+            InputStreamReader in = new InputStreamReader(context.getResources().openRawResource(resId));
+            BufferedReader br = new BufferedReader(in);
+            String line;
+            while ((line = br.readLine()) != null) {
+                s.append(line);
+            }
+            return s.toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     /**
@@ -181,10 +210,10 @@ public class FileUtils {
      */
     public static boolean deleteFileOrDirectory(File file) throws IOException {
         try {
-            if (file!=null && file.isFile()) {
+            if (file != null && file.isFile()) {
                 return file.delete();
             }
-            if (file!=null && file.isDirectory()) {
+            if (file != null && file.isDirectory()) {
                 File[] childFiles = file.listFiles();
                 // 删除空文件夹
                 if (childFiles == null || childFiles.length == 0) {

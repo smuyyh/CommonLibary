@@ -4,6 +4,7 @@ package com.yuyh.library.io;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -17,6 +18,21 @@ import java.io.InputStream;
  * @date 16/4/9.
  */
 public class IOUtils {
+
+    /**
+     * 关闭io对象
+     *
+     * @param closeable
+     */
+    public static void close(Closeable closeable) {
+        if (closeable != null) {
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                throw new RuntimeException("IOException occurred. ", e);
+            }
+        }
+    }
 
     /**
      * 输入流保存到文件

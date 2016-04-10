@@ -7,11 +7,10 @@ import Decoder.BASE64Decoder;
 import Decoder.BASE64Encoder;
 
 /**
- * AES加解密
- * <p/>
- * Created by yuyh on 2015/10/9.
+ * @author yuyuhang.
+ * @date 16/4/9.
  */
-public class AESUtils {
+public class AESEncrypt {
 
     /**
      * 密钥算法
@@ -27,7 +26,7 @@ public class AESUtils {
      */
     private SecretKeySpec key;
 
-    public AESUtils(String hexKey) {
+    public AESEncrypt(String hexKey) {
         key = new SecretKeySpec(hexKey.getBytes(), ALGORITHM);
     }
 
@@ -150,7 +149,7 @@ public class AESUtils {
     }
 
     public static void main(String[] args) throws Exception {
-        AESUtils util = new AESUtils("www.njw88.com123");
+        AESEncrypt util = new AESEncrypt("www.njw88.com123");
         System.out.println("cardNo:" + util.encryptData("1234"));
         System.out.println("exp:" + util.decryptData("WjroRwgGQPjvep2RFI0Kdw=="));
     }

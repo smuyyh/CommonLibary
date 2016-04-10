@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
  * @author MaTianyu
  * @date 14-7-31
  */
-public class ByteUtil {
+public class ByteUtils {
     /**
      * byte[] 转为 对象
      *

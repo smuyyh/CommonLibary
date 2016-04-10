@@ -4,61 +4,11 @@ import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 
-import com.yuyh.library.AppUtils;
-
 /**
  * @author yuyuhang.
  * @date 16/4/9.
  */
 public class WidgetUtils {
-    /**
-     * 获取屏幕宽度
-     *
-     * @return
-     */
-    public static int getScreenWidth() {
-        return AppUtils.getAppContext().getResources().getDisplayMetrics().widthPixels;
-    }
-
-    /**
-     * 获取屏幕高度
-     *
-     * @return
-     */
-    public static int getScreenHeight() {
-        return AppUtils.getAppContext().getResources().getDisplayMetrics().heightPixels;
-    }
-
-    /**
-     * 将dp转换成px
-     *
-     * @param dp
-     * @return
-     */
-    public static int dpToPx(float dp) {
-        final float scale = AppUtils.getAppContext().getResources().getDisplayMetrics().density;
-        return (int) (dp * scale + 0.5f);
-    }
-
-    /**
-     * 将px值转换为sp值
-     *
-     * @param pxValue
-     * @return
-     */
-    public static int pxToSp(float pxValue) {
-        return (int) (pxValue / AppUtils.getAppContext().getResources().getDisplayMetrics().scaledDensity + 0.5f);
-    }
-
-    /**
-     * 将sp值转换为px值
-     *
-     * @param spValue
-     * @return
-     */
-    public static int spToPx(float spValue) {
-        return (int) (spValue * AppUtils.getAppContext().getResources().getDisplayMetrics().scaledDensity + 0.5f);
-    }
 
     /**
      * 测量控件

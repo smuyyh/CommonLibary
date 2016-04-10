@@ -6,7 +6,7 @@ import android.widget.Toast;
 import com.yuyh.library.AppUtils;
 
 /**
- * Toast工具类，解决连续弹出问题
+ * Toast工具类，解决多个Toast同时出现的问题
  *
  * @author yuyuhang.
  * @date 16/4/9.
