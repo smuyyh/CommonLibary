@@ -13,7 +13,7 @@ import android.util.AttributeSet;
 import android.widget.EditText;
 
 import com.yuyh.library.R;
-import com.yuyh.library.utils.WidgetUtils;
+import com.yuyh.library.utils.DimenUtils;
 
 /**
  * 密码输入框(默认六位 [*] [*] [*] [*] [*] [*])
@@ -46,7 +46,7 @@ public class PasswordEditText extends EditText {
 
     private void init(Context context) {
         this.mContext = context;
-        mSpacingWidth = WidgetUtils.dpToPx(12);
+        mSpacingWidth = DimenUtils.dpToPx(12);
         setBackgroundColor(Color.TRANSPARENT);
         setMaxCharacter(mMaxCharact);
         setSingleLine(true);
@@ -61,7 +61,7 @@ public class PasswordEditText extends EditText {
     }
 
     public void setSpacingWidth(float mSpacingLen) {
-        this.mSpacingWidth = WidgetUtils.dpToPx(mSpacingLen);
+        this.mSpacingWidth = DimenUtils.dpToPx(mSpacingLen);
     }
 
     public void setMaxCharacter(int maxCharacter) {
