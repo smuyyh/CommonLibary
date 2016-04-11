@@ -32,6 +32,12 @@
             android:text="各类EditText"
             android:onClick="edittext"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="各类进度条"
+            android:onClick="progress"/>
+
     </LinearLayout>
 
 

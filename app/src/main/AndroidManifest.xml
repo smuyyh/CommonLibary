@@ -29,6 +29,10 @@
             android:name=".CustomActivity"
             android:label="@string/title_activity_custom" >
         </activity>
+        <activity
+            android:name=".CircleProgressActivity"
+            android:label="@string/title_activity_circle_progress" >
+        </activity>
     </application>
 
 </manifest>
