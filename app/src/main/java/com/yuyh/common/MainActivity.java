@@ -29,4 +29,8 @@ public class MainActivity extends AppCompatActivity {
     public void progress(View view) {
         startActivity(new Intent(this, CircleProgressActivity.class));
     }
+
+    public void tagImageView(View view) {
+        startActivity(new Intent(this, TagImageViewActivity.class));
+    }
 }

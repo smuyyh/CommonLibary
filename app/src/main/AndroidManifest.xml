@@ -33,6 +33,10 @@
             android:name=".CircleProgressActivity"
             android:label="@string/title_activity_circle_progress" >
         </activity>
+        <activity
+            android:name=".TagImageViewActivity"
+            android:label="@string/title_activity_tag_image_view" >
+        </activity>
     </application>
 
 </manifest>
