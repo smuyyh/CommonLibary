@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.yuyh.common.CustomActivity">
+    tools:context="com.yuyh.common.CustomEditTextActivity">
 
     <com.yuyh.library.view.text.AdaptiveTextView
         android:layout_width="match_parent"
@@ -37,5 +37,10 @@
     <com.yuyh.library.view.text.PasswordEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <com.yuyh.library.view.text.ShowHidePasswordEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="可显示或隐藏密码的EditText"/>
 
 </LinearLayout>

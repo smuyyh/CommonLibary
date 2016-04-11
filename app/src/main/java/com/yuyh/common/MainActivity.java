@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void edittext(View view) {
-        startActivity(new Intent(this, CustomActivity.class));
+        startActivity(new Intent(this, CustomEditTextActivity.class));
     }
 
     public void progress(View view) {
