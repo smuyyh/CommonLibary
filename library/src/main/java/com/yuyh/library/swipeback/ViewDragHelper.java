@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yuyh.library.swipbackhelper;
+package com.yuyh.library.swipeback;
 
 import android.content.Context;
 import android.support.v4.view.MotionEventCompat;

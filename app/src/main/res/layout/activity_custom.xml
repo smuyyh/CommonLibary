@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.yuyh.common.CustomActivity">
+
+    <com.yuyh.library.view.text.AdaptiveTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自动调整字体大小适应宽度 自动调整字体大小适应宽度 自动调整字体大小适应宽度 自动调整字体大小适应宽度 自动调整字体大小适应宽度 自动调整字体大小适应宽度 自动调整字体大小适应宽度" />
+
+    <com.yuyh.library.view.text.AlignTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中" />
+
+    <com.yuyh.library.view.text.ClearEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="带清除按钮的EditText" />
+
+    <com.yuyh.library.view.text.EmailAutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="自动匹配邮箱的EditText" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="密码输入框"/>
+    <com.yuyh.library.view.text.PasswordEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

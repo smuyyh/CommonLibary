@@ -55,7 +55,7 @@ public class AdaptiveTextView extends TextView {
                 Paint.FontMetrics fm = testPaint.getFontMetrics();
                 float scaled1 = (float) (this.getHeight() / (Math
                         .ceil(fm.descent - fm.top) + 2));
-                float scaled2 = (float) ((testPaint.measureText(text) / availableWidth));
+                float scaled2 = (testPaint.measureText(text) / availableWidth);
                 if (scaled1 >= 1.75 & scaled1 >= scaled2) {// 注意1.75是三星s4 小米3的适合数值
                     break;
                 }

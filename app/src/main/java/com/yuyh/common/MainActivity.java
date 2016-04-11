@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void swipe(View view){
         startActivity(new Intent(this, SwipeBackActivity.class));
     }
+
+    public void edittext(View view) {
+        startActivity(new Intent(this, CustomActivity.class));
+    }
 }

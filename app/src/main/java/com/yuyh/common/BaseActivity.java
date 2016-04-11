@@ -4,7 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.yuyh.library.swipbackhelper.SwipeBackHelper;
+import com.yuyh.library.swipeback.SwipeBackHelper;
 
 
 public class BaseActivity extends AppCompatActivity {

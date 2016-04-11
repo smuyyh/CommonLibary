@@ -26,7 +26,11 @@
             android:text="滑动关闭的Activity"
             android:onClick="swipe"/>
 
-
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="各类EditText"
+            android:onClick="edittext"/>
 
     </LinearLayout>
 

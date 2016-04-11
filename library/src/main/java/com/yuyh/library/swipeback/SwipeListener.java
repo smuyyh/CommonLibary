@@ -1,4 +1,4 @@
-package com.yuyh.library.swipbackhelper;
+package com.yuyh.library.swipeback;
 
 public interface SwipeListener {
         void onScroll(float percent, int px);

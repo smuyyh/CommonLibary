@@ -1,4 +1,4 @@
-package com.yuyh.library.swipbackhelper;
+package com.yuyh.library.swipeback;
 
 public class RelateSlider implements SwipeListener {
     public SwipeBackPage curPage;
