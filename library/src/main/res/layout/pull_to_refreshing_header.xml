@@ -22,7 +22,7 @@
                 android:scaleType="centerInside"
                 android:src="@drawable/pulltorefresh_ic_arrow_up" />
 
-            <com.simpleview.image.RotateImageView
+            <com.yuyh.library.view.image.RotateImageView
                 android:id="@+id/refreshing_header_iv_loading"
                 android:layout_width="60dip"
                 android:layout_height="60dip"
