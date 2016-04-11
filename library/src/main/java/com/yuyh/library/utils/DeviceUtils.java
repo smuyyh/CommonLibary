@@ -11,7 +11,7 @@ import android.telephony.TelephonyManager;
 import android.text.format.Formatter;
 import android.util.DisplayMetrics;
 
-import com.yuyh.library.log.LogUtils;
+import com.yuyh.library.utils.log.LogUtils;
 
 /**
  * @author yuyh.

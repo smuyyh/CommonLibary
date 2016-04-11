@@ -1,6 +1,6 @@
 package com.yuyh.library.utils;
 
-import com.yuyh.library.io.IOUtils;
+import com.yuyh.library.utils.io.IOUtils;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

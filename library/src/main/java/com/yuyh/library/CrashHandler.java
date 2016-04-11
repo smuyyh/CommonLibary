@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Looper;
 
-import com.yuyh.library.log.LogUtils;
+import com.yuyh.library.utils.log.LogUtils;
 import com.yuyh.library.utils.PackageUtils;
 
 import java.lang.Thread.UncaughtExceptionHandler;

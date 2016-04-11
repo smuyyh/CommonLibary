@@ -3,7 +3,7 @@ package com.yuyh.library.utils;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.yuyh.library.log.LogUtils;
+import com.yuyh.library.utils.log.LogUtils;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.CancellationException;
