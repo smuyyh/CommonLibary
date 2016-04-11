@@ -33,4 +33,8 @@ public class MainActivity extends AppCompatActivity {
     public void tagImageView(View view) {
         startActivity(new Intent(this, TagImageViewActivity.class));
     }
+
+    public void checkBox(View view) {
+        startActivity(new Intent(this, CheckButtonActivity.class));
+    }
 }

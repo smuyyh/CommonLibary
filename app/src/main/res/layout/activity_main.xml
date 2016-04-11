@@ -43,6 +43,12 @@
             android:text="带标签的ImageView"
             android:onClick="tagImageView"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SwitchButton和CheckBox"
+            android:onClick="checkBox"/>
+
     </LinearLayout>
 
 

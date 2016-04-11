@@ -8,4 +8,5 @@
     <string name="title_activity_custom">CustomActivity</string>
     <string name="title_activity_circle_progress">CircleProgressActivity</string>
     <string name="title_activity_tag_image_view">TagImageViewActivity</string>
+    <string name="title_activity_check_button">CheckButtonActivity</string>
 </resources>
