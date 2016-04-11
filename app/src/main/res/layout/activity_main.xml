@@ -49,6 +49,18 @@
             android:text="SwitchButton和CheckBox"
             android:onClick="checkBox"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gif动画控件"
+            android:onClick="gif"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="各类Loadding"
+            android:onClick="loadding"/>
+
     </LinearLayout>
 
 

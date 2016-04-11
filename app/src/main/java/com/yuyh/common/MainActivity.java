@@ -37,4 +37,12 @@ public class MainActivity extends AppCompatActivity {
     public void checkBox(View view) {
         startActivity(new Intent(this, CheckButtonActivity.class));
     }
+
+    public void gif(View view) {
+        startActivity(new Intent(this, GifViewActivity.class));
+    }
+
+    public void loadding(View view) {
+        startActivity(new Intent(this, LoaddingActivity.class));
+    }
 }

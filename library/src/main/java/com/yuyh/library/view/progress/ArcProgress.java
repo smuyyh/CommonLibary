@@ -1,4 +1,4 @@
-package com.yuyh.library.circleprogress;
+package com.yuyh.library.view.progress;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.yuyh.library.R;
+import com.yuyh.library.utils.DimenUtils;
 
 public class ArcProgress extends View {
     private Paint paint;
@@ -76,14 +77,14 @@ public class ArcProgress extends View {
     public ArcProgress(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        default_text_size = Utils.sp2px(getResources(), 18);
-        min_size = (int) Utils.dp2px(getResources(), 100);
-        default_text_size = Utils.sp2px(getResources(), 40);
-        default_suffix_text_size = Utils.sp2px(getResources(), 15);
-        default_suffix_padding = Utils.dp2px(getResources(), 4);
+        default_text_size = DimenUtils.dpToPx(18);
+        min_size = DimenUtils.dpToPxInt(100);
+        default_text_size = DimenUtils.spToPx(40);
+        default_suffix_text_size = DimenUtils.spToPx(15);
+        default_suffix_padding = DimenUtils.dpToPx(4);
         default_suffix_text = "%";
-        default_bottom_text_size = Utils.sp2px(getResources(), 10);
-        default_stroke_width = Utils.dp2px(getResources(), 4);
+        default_bottom_text_size = DimenUtils.spToPx(10);
+        default_stroke_width = DimenUtils.dpToPx(4);
 
         TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.ArcProgress, defStyleAttr, 0);
         initByAttributes(attributes);

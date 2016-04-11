@@ -3,9 +3,9 @@ package com.yuyh.common;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.yuyh.library.circleprogress.ArcProgress;
-import com.yuyh.library.circleprogress.CircleProgress;
-import com.yuyh.library.circleprogress.DonutProgress;
+import com.yuyh.library.view.progress.ArcProgress;
+import com.yuyh.library.view.progress.CircleProgress;
+import com.yuyh.library.view.progress.DonutProgress;
 
 import static com.yuyh.common.R.id.cir_progress;
 

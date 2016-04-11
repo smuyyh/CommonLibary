@@ -1,4 +1,4 @@
-package com.yuyh.library.circleprogress;
+package com.yuyh.library.view.progress;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.yuyh.library.R;
+import com.yuyh.library.utils.DimenUtils;
 
 public class CircleProgress extends View {
     private Paint textPaint;
@@ -58,8 +59,8 @@ public class CircleProgress extends View {
     public CircleProgress(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        default_text_size = Utils.sp2px(getResources(), 18);
-        min_size = (int) Utils.dp2px(getResources(), 100);
+        default_text_size = DimenUtils.spToPx(18);
+        min_size = DimenUtils.dpToPxInt(100);
 
         final TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CircleProgress, defStyleAttr, 0);
         initByAttributes(attributes);

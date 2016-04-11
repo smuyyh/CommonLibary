@@ -36,6 +36,8 @@
             android:name=".CheckButtonActivity"
             android:label="@string/title_activity_check_button"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".GifViewActivity" />
+        <activity android:name=".LoaddingActivity"></activity>
     </application>
 
 </manifest>

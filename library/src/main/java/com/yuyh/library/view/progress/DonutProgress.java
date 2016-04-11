@@ -1,4 +1,4 @@
-package com.yuyh.library.circleprogress;
+package com.yuyh.library.view.progress;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,6 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.yuyh.library.R;
+import com.yuyh.library.utils.DimenUtils;
 
 public class DonutProgress extends View {
     private Paint finishedPaint;
@@ -85,10 +86,10 @@ public class DonutProgress extends View {
     public DonutProgress(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        default_text_size = Utils.sp2px(getResources(), 18);
-        min_size = (int) Utils.dp2px(getResources(), 100);
-        default_stroke_width = Utils.dp2px(getResources(), 10);
-        default_inner_bottom_text_size = Utils.sp2px(getResources(), 18);
+        default_text_size = DimenUtils.spToPx(18);
+        min_size = DimenUtils.dpToPxInt(100);
+        default_stroke_width = DimenUtils.dpToPx(10);
+        default_inner_bottom_text_size = DimenUtils.spToPx(18);
 
         final TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.DonutProgress, defStyleAttr, 0);
         initByAttributes(attributes);

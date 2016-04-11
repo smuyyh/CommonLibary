@@ -12,20 +12,20 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.yuyh.library.circleprogress.ArcProgress
+        <com.yuyh.library.view.progress.ArcProgress
             android:id="@+id/arc_progress"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:arc_bottom_text="Hello"
             app:arc_progress="20" />
 
-        <com.yuyh.library.circleprogress.CircleProgress
+        <com.yuyh.library.view.progress.CircleProgress
             android:id="@+id/cir_progress"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:circle_progress = "80"/>
 
-        <com.yuyh.library.circleprogress.DonutProgress
+        <com.yuyh.library.view.progress.DonutProgress
             android:id="@+id/dou_progress"
             android:layout_width="150dp"
             android:layout_height="150dp"

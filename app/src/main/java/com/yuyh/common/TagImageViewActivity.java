@@ -2,6 +2,7 @@ package com.yuyh.common;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -19,7 +20,7 @@ import com.yuyh.library.view.image.SimpleTagImageView;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class TagImageViewActivity extends BaseActivity {
+public class TagImageViewActivity extends AppCompatActivity {
 
     private final static String TAG = "MainActivity";
 

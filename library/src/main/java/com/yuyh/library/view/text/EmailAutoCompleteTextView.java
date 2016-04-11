@@ -58,7 +58,7 @@ public class EmailAutoCompleteTextView extends AutoCompleteTextView {
 	
 	private void init(final Context context) {
 		//adapter中使用默认的emailSufixs中的数据，可以通过setAdapterString来更改
-		this.setAdapter(new EmailAutoCompleteAdapter(context, R.layout.l_auto_complete_item, emailSufixs));
+		this.setAdapter(new EmailAutoCompleteAdapter(context, R.layout.auto_complete_item, emailSufixs));
 		
 		//使得在输入1个字符之后便开启自动完成
 		this.setThreshold(1);
@@ -134,7 +134,7 @@ public class EmailAutoCompleteTextView extends AutoCompleteTextView {
 			View v = convertView;
 			if (v == null)
 				v = LayoutInflater.from(getContext()).inflate(
-						R.layout.l_auto_complete_item, null);
+						R.layout.auto_complete_item, null);
 			TextView tv = (TextView) v.findViewById(R.id.tv);
 			
 			String t = EmailAutoCompleteTextView.this.getText().toString();

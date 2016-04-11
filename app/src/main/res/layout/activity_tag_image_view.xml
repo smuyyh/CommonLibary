@@ -30,6 +30,16 @@
 
             <TableRow>
                 <SeekBar
+                    android:id="@+id/sb_tag_width"
+                    android:max="60"
+                    android:progress="20"/>
+                <TextView
+                    android:text="TagWidth"
+                    android:layout_gravity="center_vertical"/>
+            </TableRow>
+
+            <TableRow>
+                <SeekBar
                     android:id="@+id/sb_text_size"
                     android:max="40"
                     android:progress="18"/>
@@ -80,16 +90,6 @@
                 <TextView
                     android:layout_gravity="center_vertical"
                     android:text="BackgroundColor"/>
-            </TableRow>
-
-            <TableRow>
-                <SeekBar
-                    android:id="@+id/sb_tag_width"
-                    android:max="60"
-                    android:progress="20"/>
-                <TextView
-                    android:text="TagWidth"
-                    android:layout_gravity="center_vertical"/>
             </TableRow>
 
             <TableRow>
