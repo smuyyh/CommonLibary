@@ -1,4 +1,4 @@
-package com.yuyh.library.utils.data;
+package com.yuyh.library.utils.data.safe;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;

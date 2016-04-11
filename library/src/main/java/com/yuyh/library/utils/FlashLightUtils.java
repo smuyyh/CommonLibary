@@ -5,6 +5,8 @@ import android.os.Build;
 import android.os.Handler;
 
 /**
+ * 闪光灯
+ *
  * @author yuyh.
  * @date 16/4/9.
  */

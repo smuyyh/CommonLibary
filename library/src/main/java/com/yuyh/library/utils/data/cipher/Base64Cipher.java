@@ -1,6 +1,6 @@
 package com.yuyh.library.utils.data.cipher;
 
-import com.yuyh.library.utils.data.Base64;
+import com.yuyh.library.utils.data.safe.Base64;
 
 /**
  * @author yuyh.

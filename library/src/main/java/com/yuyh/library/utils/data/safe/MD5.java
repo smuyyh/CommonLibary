@@ -1,4 +1,4 @@
-package com.yuyh.library.utils.data;
+package com.yuyh.library.utils.data.safe;
 
 import java.io.IOException;
 import java.io.InputStream;

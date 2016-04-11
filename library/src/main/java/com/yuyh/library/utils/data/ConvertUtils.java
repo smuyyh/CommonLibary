@@ -1,4 +1,4 @@
-package com.yuyh.library.utils;
+package com.yuyh.library.utils.data;
 
 /**
  * @author yuyh.
