@@ -4,11 +4,6 @@ CommonLibary主要是自己整理的一些项目开发中常用的工具类、�
 <img src="https://github.com/arvida/emoji-cheat-sheet.com/blob/master/public/graphics/emojis/smirk.png?raw=true" width="18"/>。
 
 ---
-```
-sequenceDiagram
-zhangsan->>lisi: Comman Library ?
-lisi->>zhangsan: Great !
-```
 
 > anim
 > --
