@@ -61,13 +61,28 @@
     </declare-styleable>
 
     <declare-styleable name="SVCircleProgressBar">
-        <attr name="svRoundColor" format="color"/>
-        <attr name="svRoundProgressColor" format="color"/>
+        <attr name="svRoundColor" format="color" />
+        <attr name="svRoundProgressColor" format="color" />
         <attr name="svRoundWidth" format="dimension"></attr>
         <attr name="max" format="integer"></attr>
         <attr name="style">
             <enum name="STROKE" value="0"></enum>
             <enum name="FILL" value="1"></enum>
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ShimmerView">
+        <attr name="reflectionColor" format="color" />
+        <attr name="model" format="integer">
+            <enum name="Normal" value="0"></enum>
+            <enum name="START_RIGHT_AWAY" value="1"></enum>
+        </attr>
+        <attr name="repeatCount" format="integer" />
+        <attr name="duration" format="integer" />
+        <attr name="startDelay" format="integer" />
+        <attr name="direction" format="integer" >
+            <enum name="ANIMATION_DIRECTION_LTR" value="0"></enum>
+            <enum name="ANIMATION_DIRECTION_RTL" value="1"></enum>
         </attr>
     </declare-styleable>
 </resources>

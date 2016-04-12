@@ -1,8 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -20,6 +20,23 @@
         android:layout_height="wrap_content"
         android:text="最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中 最后一行居中" />
 
+    <com.yuyh.library.view.text.ShimmerTextView
+        android:id="@+id/tvShimmer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="发现没，文字会发亮哦~~"
+        android:textColor="#AAAAAA"
+        android:textSize="20sp"
+        app:direction="ANIMATION_DIRECTION_RTL"
+        app:duration="2000"
+        app:model="START_RIGHT_AWAY"
+        app:reflectionColor="#FFFFFF"
+        app:repeatCount="-1"
+        app:startDelay="0"
+        android:background="#000000"/>
+
     <com.yuyh.library.view.text.ClearEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="密码输入框"/>
+        android:text="密码输入框" />
+
     <com.yuyh.library.view.text.PasswordEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -42,13 +60,13 @@
     <com.yuyh.library.view.text.ShowHidePasswordEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="可显示或隐藏密码的EditText"/>
+        android:hint="可显示或隐藏密码的EditText" />
 
     <com.yuyh.library.view.text.SearchEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/edit_bg_white"
         android:hint="仿ios输入框"
-        android:padding="50dp"
-        android:background="@drawable/edit_bg_white"/>
+        android:padding="50dp" />
 
 </LinearLayout>
