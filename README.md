@@ -1,5 +1,7 @@
 # <i class="fa fa-flag"/> *CommonLibary项目简介*
-CommonLibary主要是自己整理的一些项目开发中常用的工具类、通用UI的集合，目前在不断的更新中，尽可能的覆盖Android开发中通用的一些东西<img src="emoji/smirk" width="18"/><img src="emoji/smirk" width="18"/><img src="emoji/smirk" width="18"/>。
+CommonLibary主要是自己整理的一些项目开发中常用的工具类、通用UI的集合，目前在不断的更新中，尽可能的覆盖Android开发中通用的一些东西<img src="https://github.com/arvida/emoji-cheat-sheet.com/blob/master/public/graphics/emojis/smirk.png?raw=true" width="18"/>
+<img src="https://github.com/arvida/emoji-cheat-sheet.com/blob/master/public/graphics/emojis/smirk.png?raw=true" width="18"/>
+<img src="https://github.com/arvida/emoji-cheat-sheet.com/blob/master/public/graphics/emojis/smirk.png?raw=true" width="18"/>。
 
 ---
 ```
